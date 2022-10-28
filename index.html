@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="style.css">
 
     <title>The Last Wiki of Us</title>
+
+    <style>
+        div.area {
+            font: normal 20pt Arial;
+            display: inline-block;
+            background: lightgreen;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        div#area1 {
+            font: normal 20pt Arial;
+            display: inline-block;
+            background: lightgreen;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
 </head>
 
 
@@ -16,7 +42,7 @@
     <script>
         //window.alert('Esta site ainda está em desenvolvimento.')
         //window.confirm('BRUH?') 
-
+        /*
         var nome = window.prompt('Qual seu nome?')
         window.alert('Prazer ' + nome + '! Você é Boomer! KKKKKKKKKKKK')
         var n1 = Number.parseInt(window.prompt('Digite sua idade.'))  // Ou só Number()
@@ -27,9 +53,90 @@
 
         document.write('Ola')
         document.writeln('Ola2')
+        */
     </script>
 
+
+    <div>
+        <div class="area" onclick="clicar()">
+            Interaja 1...
+        </div>
+        <div class="area" onmouseenter="entrar()" onmouseout="sair()">
+            Interaja 2...
+        </div>
+        <div class="area">
+            Interaja 3...
+        </div>
+        <div class="area" onmousedown="segurar()" onmouseup="soltar()">
+            Interaja 4...
+        </div>
+        <div class="area">
+            Interaja 5...
+        </div>
+    </div>
+
+    <script>
+        function clicar() {
+            var a = window.document.getElementsByTagName('div')[1]
+            a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+
+        var b = window.document.getElementsByTagName('div')[2]
+        function entrar() {
+            b.innerText = 'Passou!'
+            b.style.background = 'green'
+        }
+
+        function sair() {
+            b.innerText = 'Interaja 2...'
+            b.style.background = 'lightgreen'
+        }
+
+        var c = window.document.getElementsByTagName('div')[3]
+        c.addEventListener('mouseenter', entrar)
+        c.addEventListener('mouseout', sair)
+
+        function segurar() {
+            var d = window.document.getElementsByTagName('div')[4]
+            d.style.background = 'red'
+        }
+        function soltar() {
+            var d = window.document.getElementsByTagName('div')[4]
+            d.style.background = 'green'
+        }
+
+        var e = window.document.getElementsByTagName('div')[5]
+        e.addEventListener('mouseenter', entrar2)
+        e.addEventListener('mouseout', sair2)
+        e.addEventListener('mousedown', soltar2)
+        e.addEventListener('mouseup', segurar2)
+        e.addEventListener('click', clicar2)
+        function clicar2() {
+            e.innerText = 'Clicou!'
+            e.style.background = 'red'
+        }
+        function soltar2() {
+            e.style.background = 'green'
+        }
+        function segurar2() {
+            e.style.background = 'red'
+        }
+        function entrar2() {
+            e.innerText = 'Passou!'
+            e.style.background = 'green'
+        }
+
+        function sair2() {
+            e.innerText = 'Interaja 2...'
+            e.style.background = 'lightgreen'
+        }
+    </script>
+
+
+    <br><br><br>
     <header>
+        
         <h1>The Last of Us Official Wiki</h1>
         <h3>O melhor site sobre o mundo e a história de TLoU! nome</h3>
         <nav>
@@ -39,6 +146,14 @@
             <a href="#">Personagens</a>
         </nav>
     </header>
+
+    <script>
+         
+        var p1 = window.document.getElementsByTagName('h1')[0]
+        p1.style.background = 'green'
+        window.document.write(p1.innerText) 
+    </script>
+
 
     <main>
         <section>
@@ -67,5 +182,7 @@
         <p>Desenvolvido pelo Juregui, nas aulas do curso em video.</p>
 
     </footer>
+
+    <script src="script.js"></script>i
 </body>
 </html>
